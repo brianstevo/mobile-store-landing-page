@@ -5,6 +5,9 @@
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
 }
+*::after,::before{
+  box-sizing: border-box;
+}
 li {
     list-style: none;
   }
@@ -13,12 +16,15 @@ li {
   }
   /*heading section*/
 header {
-    /* position: fixed;
-    top: 0;
-    padding: 0px 20px;*/
+     position: fixed; 
+    top: 0; 
+    width: 100%;
+    padding: 0px 20px; 
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 10;
+    /* background-color: #eee; */
   }
   .logo {
     width: 30vw;
@@ -39,11 +45,11 @@ header {
       flex:auto;
   }
 nav ul li a{
-    color: black;
+  color: white;
     transition: .5s all ease;
 }
 nav ul li a:hover{
-    color:aqua;
+    color:#00ff00;
 }
 
 
@@ -68,7 +74,88 @@ nav ul li a:hover{
         nav ul>li{
             text-align: center;
           }
-          .logo > img {
-            margin: 0 auto;/* centering logo*/
+          .logo{
+              align-self: start;
           }
       }
+
+/* home*/
+#home{
+  height: 600px;
+  width: 100%;
+  background-image: url(phone_smartphone_hand_147279_1366x768.jpg);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  text-transform:uppercase;
+  background-position: top;
+}
+#home h1{
+padding-top: 250px;
+font-size: 39px;
+}
+#home h2{
+  font-size:30px;
+  padding-top: 20px;
+}
+
+#button{
+  padding: 10px 30px;
+  /* background-color: #00ff00; */
+  border-radius:25px;
+  margin-top: 45px;
+  display: inline-block;
+  border: 1px solid #00ff00;
+  transition: .5s all ease;
+}
+#button:hover{
+  border: 1px solid white;
+  color: #00ff00;
+}
+#button:active{
+position: relative;
+top:5px;
+}
+
+/*service*/
+#service{
+  background-color:#eee;
+}
+
+#service h2{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+.content{
+  display: flex;
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+.contents{
+  justify-content: space-around;
+  margin-right: 40px;
+  text-align: center;
+}
+.contents > img{
+  width:50px;
+  height: 50px;
+  margin-bottom: 40px;
+}
+
+@media all and (max-width: 900px) {
+  .content{
+    flex-direction: column;
+  }
+  .contents > img{
+    margin-bottom: 25px;
+  }
+  .contents > p{
+    margin-bottom: 35px;
+  }
+  .contents{
+    margin-right: 0px;
+    text-align: center;
+  }
+}
