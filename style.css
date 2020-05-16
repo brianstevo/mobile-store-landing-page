@@ -15,73 +15,80 @@ li {
     text-decoration: none;
   }
   /*heading section*/
-header {
-     position: fixed; 
-    top: 0; 
-    width: 100%;
-    padding: 0px 20px; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 10;
-    /* background-color: #eee; */
+
+  @import "https://fonts.googleapis.com/css?family=Lato:400,700";
+  *{
+      margin:0;
+      padding:0;
+      font-family: 'Lato', sans-serif;
+      box-sizing: border-box;
   }
-  .logo {
-    width: 30vw;
-    display: flex;
+  *::after,::before{
+    box-sizing: border-box;
   }
-  .logo > img {
-    width: 100%;
-    height: 100%;
-    max-width: 50px;
-    margin-left: 20px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
+  li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+  nav{
+    background-color: #eee;
   }
-  nav ul{
-    width: 40vw;
-      display: flex;
+    #header-img {
+      width: 100%;
+      max-width: 50px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    #main-nav {
+      display:none;
+      flex-direction: column;
+    }
+    #main-nav li {
+      text-align: center;
+      margin: 15px auto;
+    }
+    #main-nav li a{
+      color: black;
       font-size: 20px;
-  }
-  nav ul li{
-      flex:auto;
-  }
-nav ul li a{
-  color: white;
-    transition: .5s all ease;
-}
-nav ul li a:hover{
-    color:#00ff00;
-}
-
-
-@media (max-width: 850px) {
-    nav > ul {
-        flex-direction: column;
+    }
+    #main-nav li a:hover{
+      color:#00ff00;
+    }
+  
+    #nav-toggle{
+      width: 25px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    
+    @media screen and (min-width: 769px)  {
+      nav{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        /* height: 70px; */
+        align-items: center;
       }
-      nav  {
-        margin-top: 10px;
+      
+      #main-nav {
+        display: flex !important;
+        margin-right: 30px;
+        flex-direction: row;
+        /* justify-content: flex-end;  */
       }
-      nav li {
-        padding-bottom: 5px;
+      #main-nav li {
+        margin: 0;
+      }
+      #main-nav li a{
+        margin-left: 30px;
+      }
+      #nav-toggle{
+        display: none;
       }
     }
-    @media (max-width: 400px) {
-        header {
-          flex-direction: column;
-        }
-        nav ul>li{
-            text-align: center;
-          }
-          .logo{
-            width: 50px;
-          }
-          .logo > img{
-            margin-left: 0;
-          }
-        
-      }
 
 /* home*/
 #home{
@@ -115,6 +122,7 @@ font-size: 39px;
 #button:hover{
   border: 1px solid white;
   color: #00ff00;
+  scale: 1.1;
 }
 #button:active{
 position: relative;
@@ -163,4 +171,72 @@ top:5px;
     margin-right: 0px;
     text-align: center;
   }
+}
+.contents > img{
+  transition: .5s all ease;
+}
+.contents > img:hover{
+scale: 1.1;
+}
+
+/*gallery*/
+#sales h1{
+font-size: 36px;
+text-align: center;
+margin: 40px 0 50px;
+}
+
+#gallery{
+  display: flex;
+  padding: 0 15px;
+  margin: 50px auto 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.pics{
+    text-align: center;
+    flex: 1 1 25%;
+    margin-bottom: 40px;
+}
+.pics > p{
+    padding-top: 8px;
+}
+.pics > img{
+  transition: .5s all ease;
+}
+.pics > img:hover{
+scale: 1.1;
+}
+@media all and (max-width:768px){
+    .pics{
+        flex:1 1 50%;
+    }
+    #gallery{
+        justify-content: space-around;
+    }
+
+}
+@media all and (max-width:450px){
+    .pics{
+        flex:1 1 100%;
+    }
+
+}
+footer{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+}
+footer img{
+  width: 100%;
+  max-width: 50px;
+  margin-left: 30px;
+}
+footer p{
+  margin-right: 30px;
+
 }
